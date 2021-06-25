@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --primary-color: #C490E4;
+    --bg-color: #F9F9F9;
+    --shadow-button: 0 2px 2px #0000002e;
+    --shadow-button-hover: 0 4px 4px #0000002e;
+    --shadow-default: 0 2px 6px 0 #00000061;
+
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+}
+
+.counter-container {
+    padding: 32px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-default);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button.primary {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background: var(--primary-color);
+    box-shadow: var(--shadow-button);
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 100ms ease;
+    color: var(--bg-color);
+}
+
+button.primary:hover {
+    box-shadow: var(--shadow-button-hover);
+}
+
+button[disabled], button[disabled]:hover {
+    background: white;
+    box-shadow: none;
+    cursor: initial;
+}
+
+p.value {
+    text-align: center;
+    font-size: 32px;
 }
